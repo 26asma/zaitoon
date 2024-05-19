@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation</title>
+    <script src="https://kit.fontawesome.com/9fdb3dd115.js" crossorigin="anonymous"></script>
+
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+        *{
+padding: 0;
+margin: 0;
+font-family: "Briem Hand", cursive;
+        }
+        .wrap{
+            background: url(assets/gallery.jpg);
+            background-attachment: fixed; 
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        nav{
+    display: flex;
+    gap: 70px;
+    padding: 15px;
+    background-color:#8259233f; 
+
+    justify-content: center;
+    height: 80px;
+    text-transform: capitalize;
+}
+     
+.menu{
+    /* position: relative;
+    left: 30px; */
+    height: 80px;
+    padding: 10px;
+    width: 100%;
+    /* justify-content: center; */
+}
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 80px;
+    
+}
+
+ .menu ul li {
+ list-style: none;
+ height: 80px;  
+}
+.menu ul li a{
+    color: rgb(238, 235, 231);
+    font-size: 30px;
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: rgb(14, 13, 13);
+    /* font-size: 35px; */
+    text-decoration: none;
+}
+.events{
+    margin: 90px 0;
+    text-align: center;
+    background-color: #8b7b6769;
+}
+.events h2{
+    font-size: 40px;
+    padding: 20px;
+}
+  .events p{
+    font-size: 20px;
+    /* padding: 1px 120px; */
+    font-weight: 500;
+  } 
+  .events button{
+    padding: 20px;
+    margin: 40px;
+    font-size: 20px;
+  } 
+  .events button:hover{
+    background-color: black;
+    color: white;
+  }
+  .box{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  } 
+  .box1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   text-align: center;
+  } 
+  .box1 .img{
+    height: 300px;
+    width: 400px;
+  } 
+  .img img{
+    height: 300px;
+    width: 400px;
+  }
+  .box1 .abt{
+    height: 200px;
+    background-color: antiquewhite;
+    width: 400px;
+  
+
+  }
+  .abt{
+    padding-top: 20px;
+  }
+  .abt h4{
+    padding: 10px;
+    font-size: 25px;
+  }
+  .abt h6{
+    padding-top: 10px;
+    font-size: 15px;
+  }
+  footer{
+margin-top: 40px;
+background-color: #29201660;
+padding: 30px;
+text-align: center;
+
+}
+
+footer h2{
+    color: rgb(253, 253, 253);
+    font-size: 40px;
+    font-weight: 900;
+}
+.end {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+footer p{
+    color: white;
+    padding: 5px;
+}
+ .last {
+    display: flex; 
+    
+}
+.bot{
+    display: flex;
+    justify-content: end;
+}
+.bot a{
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
+    border-right:2px solid gray ;
+}
+footer i{
+    color: white;
+    padding: 30px;
+}
+
+@media screen and (max-width:700px){
+    nav ul li a{
+        display: none;
+    }
+    nav i{
+        display: none;
+    }
+    .box1 .img{
+    height: 300px;
+    width: 300px;
+  } 
+  .img img{
+    height: 300px;
+    width: 300px;
+  }
+  .box1 .abt{
+    height: 200px;
+    background-color: antiquewhite;
+    width: 300px;
+  
+
+  }
+}
+ 
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+<div class="container">
+        <nav>
+           
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="">location</a></li>
+                    <li><a href="#">reserve now</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="events">
+            <h2>private events</h2>
+            
+                <p>From weddings, birthdays, and pharmaceutical dinners to celebrations of life and baby showers, zaitoon has a beautiful space for your next event. Enjoy our relaxing location conveniently nestled at the base of the Hills. 
+
+                    View our different spaces below and hit the “Inquire Here” button for additional information.</p>
+                    <button>inquiry here</button>
+            
+        </div>
+        <div class="box">
+            <div class="box1">
+                <div class="img">
+                    <img src="assets/reserv1.avif" alt="">
+                </div>
+                <div class="abt">
+                    <h4>main room</h4>
+                    <p> for larger events, our beautiful space is available for buyouts </p>
+<h6>Capacity: 120 seated, 250 standing </h6>
+                </div>
+            </div>
+            <div class="box1">
+                <div class="img">
+                    <img src="assets/reserv2.avif" alt="">
+                </div>
+                <div class="abt">
+                    <h4>green room</h4>
+                      <p>The Green Room offers a private dining space under zestful Moroccan chandeliers.</p>
+                      <h6>Capacity: 35 seated, 40 standing</h6>
+                </div>
+            </div>
+            <div class="box1">
+                <div class="img">
+                    <img src="assets/reserv3.avif" alt="">
+                </div>
+                <div class="abt">
+                    <h4>north terrace</h4>
+                      <p>Rustic and intimate, our patio offers a unique outdoor dining experience.</p>
+                      <h6>Capacity: Call for capacity details</h6>
+                </div>
+            </div>
+            <div class="box1">
+                <div class="img">
+                    <img src="assets/reserve4.avif" alt="">
+                </div>
+                <div class="abt">
+                    <h4>south terrace</h4>
+                      <p>Our South terrace provides a private indoor and outdoor space, separate from restaurant dining.</p>
+                      <h6>Capacity: Call for capacity details</h6>
+                </div>
+            </div>
+            <div class="box1">
+                <div class="img">
+                    <img src="assets/reserve4.avif" alt="">
+                </div>
+                <div class="abt">
+                    <h4>main hall</h4>
+                      <p>Our main hall provides a large space, separate from restaurant dining.</p>
+                      <h6>Capacity: Call for capacity details</h6>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h2>zaitoon</h2>
+            <p class="end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, totam!</p>
+            <p>zaitoon restaurant</p>
+            <p>123,abc street,chennai,india</p>
+            <p>91-1234567890</p>
+            <p>zaitoon@email.com</p>
+            <p>open:10-00am - 10-00pm</p>
+
+            <div class="copy">
+                <p>&copy zaitoon,All Right Reserved.Designed by Asma</p>
+            </div>
+            
+            <p>connect with us now</p>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            
+       
+        
+            <div class="bot">
+
+                <a href="#">home</a>
+                <a href="#">cookies</a>
+                <a href="#">help</a>
+                <a href="#">FAQs</a>
+            </div>
+            
+        
+    </footer>
+</div>
+    </div>
+</body>
+</html>

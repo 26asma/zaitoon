@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9fdb3dd115.js" crossorigin="anonymous"></script>
+    <title>menu</title>
+</head>
+<style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+    
+    *{
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        /* font-size: 20px; */
+        font-weight: 700;
+        font-family: "Briem Hand", cursive;
+    }
+    .wrap{
+        background-attachment: fixed;
+        background-image: url(assets/menu1.avif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: rgba(105, 63, 63, 0.541);
+      
+    }
+    nav .nav{
+    display: flex;
+    gap: 70px;
+    padding: 15px;
+    justify-content: center;
+    /* background-color:#6d5c46; */
+font-size: 15px;
+    height: 80px;
+    text-transform: capitalize;
+    position:sticky;
+}
+
+.logo{ 
+       height: 90px;
+    width: 50vh; 
+    /* padding: 10px;  */
+   
+    
+
+}
+ .logo img{
+    height: 70px;
+    width: 100px;
+     position: relative;
+    /* top: -20px; */
+    left: 30px;
+    display: inline-block;
+
+} 
+.logo p{
+    float: right;
+    font-size: 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(20, 95, 49);
+    height: 70px;
+    width: 60%;
+    font-weight:800 ;
+}
+/* .nav .menu{
+ 
+    height: 80px;
+    padding: 10px;
+} */
+.nav ul{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    height: 80px;
+    
+}
+
+ .nav ul li {
+ list-style: none;
+ height: 80px;
+
+  
+    
+}
+.nav ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(8, 8, 8)
+    
+}
+.nav ul li a:hover{
+    color: rgb(243, 241, 241);
+}
+.nav i {
+    position: relative;
+    left: 15px;
+    color:rgb(12, 12, 12);
+
+}
+nav .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+nav .nav-item .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    width: 150px;
+}
+
+nav .dropdown-menu.fade-down {
+    top: 100%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+}
+
+nav .nav-item:hover .dropdown-menu {
+    top: 100%;
+    transform: rotateX(0deg);
+    visibility: visible;
+    transition: .5s;
+    opacity: 1;
+    display: block;
+}
+.dropdown-menu.fade-down{
+    text-decoration: black;
+    
+    
+    width: 50%;
+    
+}
+.dropdown-menu.fade-down a{
+    color: rgb(248, 242, 242);
+}
+.dropdown-item {
+    display: inline-block;
+    width: 100%;
+    padding: .25rem 1rem;
+    font-weight: 400;
+   
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: rgba(136, 100, 79, 0.466);
+    border: 0;
+    position: relative;
+
+} 
+
+    .container{
+        background-color: rgba(105, 63, 63, 0.541);
+        /* background-color:rgba(53, 27, 27, 0.829) ; */
+        text-align: center;
+    }
+    .menu{
+        /* text-align: center; */
+        padding: 50px 0;
+        display: flex;
+        gap: 150px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        font-size: 1.5rem;
+    }
+  
+    .wrap h1{
+        font-size: 40px;
+        font-weight: 600;
+        padding: 30px;
+    }
+    .menu ul li{
+        list-style: none;
+    }
+     .menu .box{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 40px;
+        /* justify-content: center; */
+    } 
+    .tog{
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        width: 100%;
+        
+    }
+    .box h2{
+        font-size: 30px;
+        font-weight: 400;
+    }
+    footer{
+        background-color: #29201660;
+    }
+    .bot a{
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    padding: 0 20px;
+    border-right:2px solid gray ;
+}
+
+@media screen and (max-width:700px){
+    .nav ul li a{
+        display: none;
+    }
+    .nav i{
+        display: none;
+    }
+}
+@media screen and (max-width:400px){
+    .menu{
+        font-size: 1rem;
+    }
+}
+</style>
+<body>
+    <div class="wrap">
+<div class="container">
+    <nav>
+        <!-- <div class="logo">
+            <img src="assets/logo.png" alt="">
+            <p>zaitoon</p>
+
+        </div> -->
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li>
+                    <div class="nav-item dropdown">
+                        <a href="menu.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">menu</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="#" class="dropdown-item">veg</a>
+                            <a href="#" class="dropdown-item">non veg</a>
+                            <a href="#" class="dropdown-item">seafood</a>
+                        </div>
+                </li>
+                <li><a href="reservation.html">reservation</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="gallery.html">gallery</a></li>
+                 <li><a href="#">order now</a><i class="fa-solid fa-2x fa-bag-shopping"></i></li>
+            </ul>
+
+        </div>
+    </nav>
+        <h1>menu</h1>
+        <div class="menu">
+            <div class="box">
+                
+                <h2>fresh juices</h2>
+                <div class="tog">
+
+                    <div class="item">
+                        <ul>
+                        <li>fresh orange</li>
+                        <li>fizzy apple</li>
+                        <li>purple grape</li>
+                        <li>refreshing lime</li>
+                        <li>blue lime</li>
+                        <li>tangy pine</li>
+                        <li>slurpy mango</li>
+                        <li>litch crush</li>
+                        <li>squishy melon</li>
+                    </ul>
+                </div>
+                <div class="price">
+                    <ul>
+                        <li>&#8377 50</li>
+                        <li>&#8377 80</li>
+                        <li>&#8377 90</li>
+                        <li>&#8377 60</li>
+                        <li>&#8377 80</li>
+                        <li>&#8377 90</li>
+                        <li>&#8377 90</li>
+                        <li>&#8377 100</li>
+                        <li>&#8377 100</li>
+                    </ul>
+                </div>
+</div>
+</div>
+                <div class="box">
+
+                    <h2>beverages</h2>
+                    <div class="tog">
+                    <div class="item">
+                        <ul>
+                            <li>coffee latte</li>
+                            <li>cappuccino</li>
+                            <li>dalgona</li>
+                            <li>esspresso</li>
+                            <li>cafe-mocha</li>
+                            <li>hot chocolate</li>
+                            <li>caramel latte</li>
+                            <li>afghani tea</li>
+                            <li>irani chai</li>
+                            <li>green tea</li>
+                            <li>regular tea</li>
+                            <li>masala chai</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="price">
+                        <ul>
+                            <li>&#8377 70</li>
+                            <li>&#8377 80</li>
+                            <li>&#8377 80</li>
+                            <li>&#8377 60</li>
+                            <li>&#8377 80</li>
+                            <li>&#8377 90</li>
+                            <li>&#8377 50</li>
+                            <li>&#8377 60</li>
+                            <li>&#8377 60</li>
+                            <li>&#8377 60</li>
+                            <li>&#8377 70</li>
+                            <li>&#8377 90</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="box">
+
+            <h2>smoothies</h2>
+            <div class="tog">
+            <div class="item">
+                <ul>
+                    <li>strawberry-banana</li>
+                    <li>chocolate</li>
+                    <li>strawberry mango</li>
+                    <li>chocolate banana</li>
+                    <li>zaitoon special</li>
+                    <li>pome milkshake</li>
+                    <li>apple milkshake</li>
+                    <li>banana shake</li>
+                    <li>chiko shake</li>
+                    <li>dates shake</li>
+                    <li>chocolate-date</li>
+                    <li>dried-fruits</li>
+                    <li>almonds shake</li>
+                    <li>pistachio shake</li>
+                    
+                </ul>
+            </div>
+            <div class="price">
+                <ul>
+                    <li>&#8377 170</li>
+                    <li>&#8377 180</li>
+                    <li>&#8377 190</li>
+                    <li>&#8377 190</li>
+                    <li>&#8377 250</li>
+                    <li>&#8377 250</li>
+                    <li>&#8377 210</li>
+                    <li>&#8377 240</li>
+                    <li>&#8377 270</li>
+                    <li>&#8377 290</li>
+                    <li>&#8377 350</li>
+                    <li>&#8377 390</li>
+                    <li>&#8377 350</li>
+                    <li>&#8377 370</li>
+                </ul>
+            </div>
+    </div>
+</div>
+<div class="box">
+
+    <h2>soups</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken soup</li>
+            <li>chicken cream </li>
+            <li>chicken & corn</li>
+            <li>chicken clear</li>
+            <li>hot & sour</li>
+            <li>zaitoon special</li>
+            <li>mutton soup</li>
+            <li>cream soup</li>
+            <li>mutton nalli soup</li>
+            <li>veg soup</li>
+            <li>tomato soup</li>
+            <li>clear veg</li>
+            <li>corn manchow</li>
+           
+            
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 410</li>
+            <li>&#8377 440</li>
+            <li>&#8377 470</li>
+            <li>&#8377 490</li>
+            <li>&#8377 290</li>
+            <li>&#8377 190</li>
+            <li>&#8377 150</li>
+         
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>starters</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken tandoor</li>
+            <li>chicken kebab</li>
+            <li>chicken tikka</li>
+            <li>chicken wings</li>
+            <li>bbq chicken</li>
+            <li>chicken rosted</li>
+            <li>dejaj faa</li>
+            <li>dejaj tawa roasted</li>
+            <li>alfaham</li>
+            <li>dates shake</li>
+            <li>irani tikka</li>
+            <li>fish fried</li>
+            <li>rosted honey kebab</li>
+            <li>laham tawa ribs</li>
+            
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 370</li>
+            <li>&#8377 380</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 350</li>
+            <li>&#8377 350</li>
+            <li>&#8377 310</li>
+            <li>&#8377 340</li>
+            <li>&#8377 370</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+            <li>&#8377 390</li>
+            <li>&#8377 350</li>
+            <li>&#8377 470</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>wraps</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken wrap</li>
+            <li>kebab  wrap</li>
+            <li>chicken tikka wrap</li>
+            <li>chicken shawarma</li>
+            <li>bbq chicken shawarma</li>
+            <li>chicken roll</li>
+            <li>mutton wrap</li>
+            <li>sheek wrap</li>
+            <li>regular wrap</li>
+            <li>special wrap</li>
+            <li>zaitoon spcl wrap</li>
+            <li>thin wrap with fries</li>
+           
+            
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 370</li>
+            <li>&#8377 380</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 350</li>
+            <li>&#8377 350</li>
+            <li>&#8377 310</li>
+            <li>&#8377 340</li>
+            <li>&#8377 370</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+            <li>&#8377 390</li>
+           
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>main-course</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken friedrice</li>
+            <li>shezwaan friedrice</li>
+            <li>chicken bbq rice</li>
+            <li>chicken noodles</li>
+            <li>spicy chicken noodles</li>
+            <li>egg fried rice</li>
+            <li>egg noodles</li>
+            <li>veg rice</li>
+            <li>veg noodle</li>
+            <li> chicken biryani</li>
+            <li>mutton biryani</li>
+            <li>dum biryani</li>
+            <li>zaitoon spcl biryani</li>
+            <li>hydrabadi biryani</li>
+            <li>shahinsha biryani</li>
+            <li>kanpuri biryani</li>
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 370</li>
+            <li>&#8377 380</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 350</li>
+            <li>&#8377 350</li>
+            <li>&#8377 310</li>
+            <li>&#8377 340</li>
+            <li>&#8377 370</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>indian gravy & breads</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>butter chicken</li>
+            <li>chilli chicken</li>
+            <li>malai chicken </li>
+            <li>white chicken</li>
+            <li>blackpepper chicken</li>
+            <li>nalli nihari</li>
+            <li>mutton gravy</li>
+            <li>egg gravy</li>
+            <li>manchurian</li>
+            <li>mushroom</li>
+            <li>daal</li>
+            <li>mixed daal</li>
+            <li>naan</li>
+            <li>flat bread</li>
+            <li>wheat bread</li>
+            <li>white chapatis</li>
+            <li>wheat chapatis</li>
+            <li>laccha parota</li>
+            <li>silon parota</li>
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 210</li>
+            <li>&#8377 340</li>
+            <li>&#8377 270</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 390</li>
+            <li>&#8377 90</li>
+            <li>&#8377 90</li>
+            <li>&#8377 90</li>
+            <li>&#8377 90</li>
+            <li>&#8377 90</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>sandwiches & burgers</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken sandwich</li>
+            <li>chicken cheese sandwich</li>
+            <li>fried chicken sandwich</li>
+            <li>veg sandwich</li>
+            <li>chicken burger</li>
+            <li>fried chicken burger</li>
+            <li>bbq burger</li>
+            <li>classic burger</li>
+            <li>double cheese burger</li>
+            <li>veg burger</li>
+            <li>veg-cheese burger</li>
+          
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 210</li>
+            <li>&#8377 340</li>
+            <li>&#8377 270</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+         
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>pizza</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chicken pizza </li>
+            <li>chicken tikka pizza</li>
+            <li>margherita pizza</li>
+            <li>BBQ Chicken Pizza.</li>
+            <li>Pepperoni Pizza.</li>
+            <li>meat pizza</li>
+            <li>Hawaiian Pizza</li>
+            <li>Sicilian Pizza</li>
+            <li>regular pizza</li>
+            <li>veggies pizza</li>
+            <li>mashroom pizza</li>
+          
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 210</li>
+            <li>&#8377 340</li>
+            <li>&#8377 270</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+         
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>desserts</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>kunafa </li>
+            <li>tiramisu</li>
+            <li>cheese cake</li>
+            <li>mango pudding</li>
+            <li>chocolate pudding</li>
+            <li>egg custard</li>
+            <li>white custard</li>
+            <li>gulab jammun</li>
+            <li>rasagulla</li>
+            <li>rasmalai</li>
+            <li>Almond halwa</li>
+          
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 210</li>
+            <li>&#8377 340</li>
+            <li>&#8377 270</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+         
+        </ul>
+    </div>
+</div>
+</div>
+<div class="box">
+
+    <h2>cakes & icecream</h2>
+    <div class="tog">
+    <div class="item">
+        <ul>
+            <li>chocolate cake</li>
+            <li>redvelvet cake</li>
+            <li>vanila cake</li>
+            <li>cupcakes</li>
+            <li>brownies</li>
+            <li>choclate lava cake</li>
+            <li>belgium choclate</li>
+            <li>swiss chocolate</li>
+            <li>cheese blueberry</li>
+            <li>butterscotch</li>
+            <li>sizzling chocolate</li>
+            <li>vanilla</li>
+        </ul>
+    </div>
+    <div class="price">
+        <ul>
+            <li>&#8377 270</li>
+            <li>&#8377 280</li>
+            <li>&#8377 290</li>
+            <li>&#8377 290</li>
+            <li>&#8377 250</li>
+            <li>&#8377 250</li>
+            <li>&#8377 210</li>
+            <li>&#8377 340</li>
+            <li>&#8377 270</li>
+            <li>&#8377 490</li>
+            <li>&#8377 350</li>
+            <li>&#8377 350</li>
+        </ul>
+    </div>
+</div>
+</div>
+    </div>
+    <footer>
+        <h2>zaitoon</h2>
+        <p class="end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, totam!</p>
+        <p>zaitoon restaurant</p>
+        <p>123,abc street,chennai,india</p>
+        <p>91-1234567890</p>
+        <p>zaitoon@email.com</p>
+        <p>open:10-00am - 10-00pm</p>
+        
+        <div class="copy">
+            <p>&copy zaitoon,All Right Reserved.Designed by Asma</p>
+        </div>
+        
+        <p>connect with us now</p>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        
+        
+        
+        <div class="bot">
+            
+            <a href="#">home</a>
+            <a href="#">cookies</a>
+            <a href="#">help</a>
+            <a href="#">FAQs</a>
+        </div>
+        
+        
+    </footer>
+</div>
+</div>
+</body>
+</html>
