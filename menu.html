@@ -38,6 +38,20 @@ font-size: 15px;
     position:sticky;
 }
 
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    width: 25px;
+    display: block;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    /* background-color: rgb(66, 46, 7); */
+}
 .logo{ 
        height: 90px;
     width: 50vh; 
@@ -206,15 +220,53 @@ nav .nav-item:hover .dropdown-menu {
     padding: 0 20px;
     border-right:2px solid gray ;
 }
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 20px;
+    }
+    
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
 
-@media screen and (max-width:700px){
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        
+    }
+    .nav-menu{
+       position: fixed;
+       left: 100%;
+       top:70px ;
+       gap: 0;
+       flex-direction: column;
+   background-color: #6137519d;
+  
+       width: 100%;
+       text-align: center;
+       transition: 0.3s;
+    }
+  
+    .nav-menu.active{
+        left: 0;
+        flex-direction: column;
+        height: 50vh;
+    }
+}
+/* @media screen and (max-width:700px){
     .nav ul li a{
         display: none;
     }
     .nav i{
         display: none;
     }
-}
+} */
 @media screen and (max-width:400px){
     .menu{
         font-size: 1rem;
@@ -231,9 +283,9 @@ nav .nav-item:hover .dropdown-menu {
 
         </div> -->
         <div class="nav">
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="index.html">home</a></li>
-                <li>
+                <li class="nav-item">
                     <div class="nav-item dropdown">
                         <a href="menu.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">menu</a>
                         <div class="dropdown-menu fade-down m-0">
@@ -242,12 +294,16 @@ nav .nav-item:hover .dropdown-menu {
                             <a href="#" class="dropdown-item">seafood</a>
                         </div>
                 </li>
-                <li><a href="reservation.html">reservation</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-                 <li><a href="#">order now</a><i class="fa-solid fa-2x fa-bag-shopping"></i></li>
+                <li class="nav-item"><a href="reservation.html">reservation</a></li>
+                <li class="nav-item"><a href="contact.html">contact</a></li>
+                <li class="nav-item"><a href="gallery.html">gallery</a></li>
+                 <li class="nav-item"><a href="#">order now</a><i class="fa-solid fa-2x fa-bag-shopping"></i></li>
             </ul>
-
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
         <h1>menu</h1>
@@ -778,5 +834,6 @@ nav .nav-item:hover .dropdown-menu {
     </footer>
 </div>
 </div>
+<script src="java.js"></script>
 </body>
 </html>

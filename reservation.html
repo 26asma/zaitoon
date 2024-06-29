@@ -21,7 +21,7 @@ font-family: "Briem Hand", cursive;
             background-size: cover;
             background-repeat: no-repeat;
         }
-        nav{
+        /* nav{
     display: flex;
     gap: 70px;
     padding: 15px;
@@ -30,16 +30,138 @@ font-family: "Briem Hand", cursive;
     justify-content: center;
     height: 80px;
     text-transform: capitalize;
+} */
+nav .menu {
+   
+   display: flex;
+   gap: 70px;
+   padding: 15px;
+ width: 90vw;
+   justify-content: center;
+   height: 80px;
+   text-transform: capitalize;
+   
 }
-     
+
+.hamburger{
+   display: none;
+   cursor: pointer;
+}
+.bar{
+   width: 25px;
+   display: block;
+   height: 3px;
+   margin: 5px auto;
+   -webkit-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   background-color: white;
+   /* background-color: rgb(66, 46, 7); */
+}
+
+
 .menu{
+   /* position: relative;
+   left: 30px;  */
+   height: 80px;
+   padding: 10px;
+   width: 90vw;
+   text-align: center;
+   
+   
+}
+.menu ul{
+   display: flex;
+   gap: 20px;
+   flex-direction: row;
+   height: 80px;
+   
+}
+
+.menu ul li {
+list-style: none;
+height: 80px;
+
+ 
+   
+}
+.menu ul li a{
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: 700;
+   color: white
+   
+}
+.menu ul li a:hover{
+   color: black;
+}
+.menu i {
+   position: relative;
+   left: 15px;
+   color:white;
+
+}
+nav .dropdown-toggle::after {
+   border: none;
+   content: "\f107";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   vertical-align: middle;
+   margin-left: 8px;
+}
+nav .nav-item .dropdown-menu {
+   display: block;
+   margin-top: 0;
+   opacity: 0;
+   visibility: hidden;
+   transition: .5s;
+   width: 150px;
+}
+
+nav .dropdown-menu.fade-down {
+   top: 100%;
+   transform: rotateX(-75deg);
+   transform-origin: 0% 0%;
+}
+
+nav .nav-item:hover .dropdown-menu {
+   top: 100%;
+   transform: rotateX(0deg);
+   visibility: visible;
+   transition: .5s;
+   opacity: 1;
+   display: block;
+}
+.dropdown-menu.fade-down{
+   text-decoration: black;
+   
+   
+   width: 50%;
+   
+}
+.dropdown-menu.fade-down a{
+   color: black;
+}
+.dropdown-item {
+   display: inline-block;
+   width: 100%;
+   padding: .25rem 1rem;
+   font-weight: 400;
+  
+   text-align: inherit;
+   white-space: nowrap;
+   background-color: rgb(238, 232, 223);
+   border: 0;
+   position: relative;
+
+} 
+/* .menu{
     /* position: relative;
     left: 30px; */
-    height: 80px;
+    /* height: 80px;
     padding: 10px;
-    width: 100%;
-    /* justify-content: center; */
-}
+    width: 100%; */
+    /* justify-content: center; 
+} */
 .menu ul{
     display: flex;
     justify-content: space-around;
@@ -54,7 +176,7 @@ font-family: "Briem Hand", cursive;
 }
 .menu ul li a{
     color: rgb(238, 235, 231);
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
 }
 .menu ul li a:hover{
@@ -166,11 +288,58 @@ footer i{
     color: white;
     padding: 30px;
 }
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 20px;
+    }
+    
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        
+    }
+    .nav-menu{
+       position: fixed;
+       left: 100%;
+       top:70px ;
+       gap: 0;
+       flex-direction: column;
+   background-color: #4833189d;
+  
+       width: 100%;
+       text-align: center;
+       transition: 0.3s;
+    }
+ 
+    .nav-item{
+margin:16px 0;
+
+
+    }
+    .nav ul li a{
+        color: #483318;
+    }
+    .nav-menu.active{
+        left: 0;
+        flex-direction: column;
+        height: 80vh;
+    }
+}
 
 @media screen and (max-width:700px){
-    nav ul li a{
+    /* nav ul li a{
         display: none;
-    }
+    } */
     nav i{
         display: none;
     }
@@ -197,17 +366,34 @@ footer i{
 <body>
     <div class="wrap">
 <div class="container">
-        <nav>
-           
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                    <li><a href="">location</a></li>
-                    <li><a href="#">reserve now</a></li>
-                </ul>
+    <nav>
+       
+        <div class="menu">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">home</a></li>
+                <li class="nav-item">
+                    <div class="nav-item dropdown">
+                        <a href="menu.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">menu</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="#" class="dropdown-item">starters</a>
+                            <a href="#" class="dropdown-item">seafood</a>
+                            <a href="#" class="dropdown-item">salad</a>
+                            <a href="#" class="dropdown-item">soups</a>
+                        </div>
+                </li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link">reservation</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">contact</a></li>
+                <li><a href="gallery.html" class="nav-link">gallery</a></li>
+
+                <li class="nav-item"><a href="#" class="nav-link">order now</a><i class="fa-solid fa-2x fa-bag-shopping"></i></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-        </nav>
+        </div>
+    </nav>
         <div class="events">
             <h2>private events</h2>
             
@@ -302,5 +488,6 @@ footer i{
     </footer>
 </div>
     </div>
+    <script src="java.js"></script>
 </body>
 </html>
