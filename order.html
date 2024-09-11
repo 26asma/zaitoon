@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9fdb3dd115.js" crossorigin="anonymous"></script>
+    <style>
+  
+            @import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+    
+        body{
+            background-color: #483318;
+        }
+        #results{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    img{
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+        }
+        .searchbox{
+            display: flex;
+          
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        input{
+            width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+  
+}
+
+        
+    </style>
+</head>
+<body>
+    <nav>
+      
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li>
+                    <div class="nav-item dropdown">
+                        <a href="menu.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">menu</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="#" class="dropdown-item">starters</a>
+                            <a href="#" class="dropdown-item">seafood</a>
+                            <a href="#" class="dropdown-item">salad</a>
+                            <a href="#" class="dropdown-item">soups</a>
+                        </div>
+                </li>
+                <li><a href="reservation.html">reservation</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="gallery.html">gallery</a></li>
+
+                <li><a href="#">order now</a><i class="fa-solid fa-2x fa-bag-shopping"></i></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="searchbox">
+    <input type="text" id="searchInput" placeholder="Search the menu..." onkeyup="searchMenu()">
+    <button onclick="searchMenu()">Search</button>
+</div>
+    <div id="results"></div>
+
+
+
+
+  <script>
+    const menu = [
+      { name: "Margherita Pizza", img: "assets/pizza.avif" },
+      { name: "Spaghetti Bolognese", img: "assets/chinese.jpg" },
+      { name: "Caesar Salad", img: "assets/salad.avif" },
+      { name: "Grilled Chicken", img: "assets/tandoor.jpg" },
+      { name: "finger fish", img:  "assets/fingerfish.jpg" },
+      { name: "Chocolate Cake", img: "assets/cake.jpg" },
+      { name: "Cheese Cake", img: "assets/cheesecake.jpg" },
+      { name: "chocolate icecream", img: "assets/icecream.jpg" },
+      { name: "Chicken Burger", img: "assets/burger.avif" },
+      { name: "coffee-latte", img:  "assets/latte.jpg" },
+      { name: "kunafa", img:  "assets/kunafa.jpg" }
+    ];
+
+    function searchMenu() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const resultsDiv = document.getElementById("results");
+      
+      resultsDiv.innerHTML = "";
+
+   
+      const results = query
+        ? menu.filter(item => item.name.toLowerCase().includes(query))
+        : menu;
+
+      if (results.length) {
+        results.forEach(item => {
+          const itemDiv = document.createElement("div");
+
+          const img = document.createElement("img");
+          img.src = item.img;
+          img.alt = item.name;
+
+          const name = document.createElement("p");
+          name.textContent = item.name;
+
+          itemDiv.appendChild(img);
+          itemDiv.appendChild(name);
+          resultsDiv.appendChild(itemDiv);
+        });
+      } else {
+        resultsDiv.textContent = "No menu items found";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", searchMenu);
+  </script>
+</body>
+</html>
+
+</body>
+</html>
